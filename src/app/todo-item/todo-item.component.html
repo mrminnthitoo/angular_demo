@@ -1,3 +1,7 @@
 <div class="todo-container">
- <div>{{todo()?.title}}</div>
+ <div>
+   {{todo()?.title}}
+   &nbsp;
+   <button class="btn btn-success" (click)="deleteTodo()">Delete</button>
+ </div>
 </div>

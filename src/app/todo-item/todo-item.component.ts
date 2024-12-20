@@ -1,4 +1,4 @@
-import {Component, computed, input} from '@angular/core';
+import {Component, computed, input, output} from '@angular/core';
 import {Todo} from '../todo.model';
 
 @Component({
@@ -10,5 +10,12 @@ import {Todo} from '../todo.model';
 })
 export class TodoItemComponent{
   todo = input<Todo>();
+  todoDelete = output<Todo>();
   // title = computed(() => `${this.todo()?.title}`);
+
+  deleteTodo(){
+    console.log("Delete Todo, ", this.todo());
+    this.todoDelete.emit(this.todo()!);
+  }
+
 }

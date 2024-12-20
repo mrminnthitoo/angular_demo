@@ -1,7 +1,7 @@
-<div>
+<div class="container">
   <h1>Todo List</h1>
   <app-todo-item [todo]="singleTodo"></app-todo-item>
   @for (todo of todos; track todo.id) {
-    <app-todo-item [todo]="todo"/>
+    <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)"/>
   }
 </div>
